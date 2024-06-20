@@ -18,7 +18,7 @@ class Profile(models.Model):
     age = models.IntegerField(editable=False)  # Calculated field
     bio = models.TextField(max_length=200, blank=True)
     cv = models.ManyToManyField(Files, blank=True)
-    expired_token = models.CharField(max_length=50)
+    expired_token = models.CharField(max_length=50,null=True,blank=True)
     expired_date = models.DateField(auto_now=True)
 
     def __str__(self):
